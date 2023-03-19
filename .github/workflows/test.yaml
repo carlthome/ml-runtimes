@@ -1,0 +1,46 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout merge commit
+        uses: actions/checkout@v3
+
+      - name: Create nix store
+        run: |
+          sudo mkdir -p /nix/store
+          sudo chmod -R 777 /nix
+
+      - name: Cache nix store
+        uses: actions/cache@v3
+        with:
+          path: /nix/store/**
+          key: ${{ runner.os }}-${{ hashFiles('flake.lock') }}
+
+      - name: Install nix
+        uses: cachix/install-nix-action@v18
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: Connect to binary cache
+        uses: cachix/cachix-action@v12
+        with:
+          name: carlthome
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+
+      - name: Show flake metadata
+        run: nix flake metadata
+
+      - name: Show the provided outputs
+        run: nix flake show
+
+      - name: Check whether the flake evaluates and run its tests
+        run: nix flake check --keep-going
