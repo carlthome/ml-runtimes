@@ -2,7 +2,7 @@
   description = "Nix packages with ML runtime dependencies for interactive development";
   outputs = { self, nixpkgs }:
     let
-      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ];
+      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-darwin" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
     in
     {
