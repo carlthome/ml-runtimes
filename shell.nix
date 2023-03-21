@@ -6,7 +6,6 @@
         act
         cachix
         git
-        home-manager
         nix-diff
         nix-info
         nixpkgs-fmt
