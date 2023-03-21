@@ -14,7 +14,7 @@ nix flake show github:carlthome/ml-runtimes
 nix run github:carlthome/ml-runtimes#pytorch
 
 # Give ipython additional command-line arguments.
-nix run github:carlthome/ml-runtimes#pytorch -- --debug --pdb -c "import torch; print(torch.__version__)"
+nix run github:carlthome/ml-runtimes#pytorch -- --debug -c "import torch; print(torch.__version__)"
 ```
 
 ## Develop
