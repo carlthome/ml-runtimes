@@ -4,7 +4,7 @@ Nix packages for interactive ML development
 
 ## Usage
 
-First, install `nix` ([installation](https://nixos.org/download.html)) with flakes enabled (https://nixos.wiki/wiki/Flakes#Enable_flakes).
+First, install `nix` ([installation](https://nixos.org/download.html)) with [flakes enabled](https://nixos.wiki/wiki/Flakes#Enable_flakes).
 
 ```sh
 # List all environments.
