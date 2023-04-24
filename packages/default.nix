@@ -11,6 +11,9 @@
       sklearn
       tensorflow
     ];
+    meta = {
+      description = "Python environments for machine learning development";
+    };
   };
   default = all;
 }

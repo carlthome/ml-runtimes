@@ -13,4 +13,7 @@ pkgs.buildEnv {
       datasets
     ]))
   ];
+  meta = {
+    description = "Python environment for PyTorch development";
+  };
 }

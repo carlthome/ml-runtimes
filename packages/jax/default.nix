@@ -11,4 +11,7 @@ pkgs.buildEnv {
       optax
     ]))
   ];
+  meta = {
+    description = "Python environment for JAX development";
+  };
 }

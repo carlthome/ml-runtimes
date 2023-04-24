@@ -10,4 +10,7 @@ pkgs.buildEnv {
       apache-beam
     ]))
   ];
+  meta = {
+    description = "Python environment for TensorFlow development";
+  };
 }
