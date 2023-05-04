@@ -1,5 +1,10 @@
 {
   description = "Nix packages with ML runtime dependencies for interactive development";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  };
+
   outputs = { self, nixpkgs }:
     let
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-darwin" ];
