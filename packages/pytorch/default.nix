@@ -5,12 +5,13 @@ pkgs.buildEnv {
     (pkgs.python3.withPackages (ps: with ps; [
       ipython
       matplotlib
-      torch-bin
-      torchaudio-bin
-      torchvision-bin
+      torch
+      torchaudio
+      torchvision
       huggingface-hub
       transformers
       datasets
+      soundfile
     ]))
   ];
   meta = {
