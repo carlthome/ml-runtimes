@@ -8,9 +8,10 @@ pkgs.buildEnv {
       torch
       torchaudio
       torchvision
-      huggingface-hub
+      seaborn
       transformers
       datasets
+      torchmetrics
       soundfile
     ]))
   ];
