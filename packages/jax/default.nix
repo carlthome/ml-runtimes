@@ -7,8 +7,9 @@ pkgs.buildEnv {
       matplotlib
       jax
       jaxlib-bin
-      flax
-      optax
+      # TODO Broken on darwin.
+      #flax
+      #optax
     ]))
   ];
   meta = {
