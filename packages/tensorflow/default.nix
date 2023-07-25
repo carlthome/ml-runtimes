@@ -5,9 +5,9 @@ pkgs.buildEnv {
     (pkgs.python3.withPackages (ps: with ps; [
       ipython
       matplotlib
-      tensorflow-bin
-      tensorflow-datasets
-      apache-beam
+      tensorflow
+      # TODO Broken on darwin.
+      #tensorflow-datasets
     ]))
   ];
   meta = {
