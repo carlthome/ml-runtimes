@@ -18,6 +18,6 @@
       packages = forEachPkgs (pkgs: import ./packages { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
       formatter = forEachPkgs (pkgs: pkgs.nixpkgs-fmt);
-      githubActions = nix-github-actions.lib.mkGithubMatrix { checks = self.packages; };
+      githubActions = self.nix-github-actions.lib.mkGithubMatrix { checks = self.packages; };
     };
 }
