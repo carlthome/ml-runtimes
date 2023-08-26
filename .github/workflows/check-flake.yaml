@@ -20,6 +20,17 @@ jobs:
           set -Eeu
           echo "matrix=$(nix eval --json '.#githubActions.matrix')" >> "$GITHUB_OUTPUT"
 
+
+  nix-build:
+    needs: nix-matrix
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix: ${{fromJSON(needs.nix-matrix.outputs.matrix)}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
+      - run: nix build -L ".#${{ matrix.attr }}"
+
   build:
     runs-on: ubuntu-latest
     steps:
