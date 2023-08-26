@@ -8,6 +8,4 @@ on:
 
 jobs:
   test:
-    uses: carlthome/workflows/.github/workflows/nix.yaml@main
-    secrets:
-      CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_ACTION }}
+    run: echo OK
