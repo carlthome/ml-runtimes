@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-github-actions = {
-        url = "github:nix-community/nix-github-actions";
-        follows = "nixpkgs";
+      url = "github:nix-community/nix-github-actions";
+      follows = "nixpkgs";
     };
   };
 
@@ -18,6 +18,6 @@
       packages = forEachPkgs (pkgs: import ./packages { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
       formatter = forEachPkgs (pkgs: pkgs.nixpkgs-fmt);
-      githubActions = self.nix-github-actions.lib.mkGithubMatrix { checks = self.packages; };
+      githubActions = nix-github-actions.lib.mkGithubMatrix { checks = self.packages; };
     };
 }
