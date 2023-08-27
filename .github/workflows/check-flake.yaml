@@ -20,7 +20,6 @@ jobs:
           set -Eeu
           echo "matrix=$(nix eval --json '.#githubActions.matrix')" >> "$GITHUB_OUTPUT"
 
-
   nix-build:
     needs: nix-matrix
     runs-on: ${{ matrix.os }}
