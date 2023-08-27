@@ -18,6 +18,9 @@
     },
     "root": {
       "inputs": {
+        "nix-github-actions": [
+          "nixpkgs"
+        ],
         "nixpkgs": "nixpkgs"
       }
     }
