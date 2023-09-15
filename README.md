@@ -38,3 +38,9 @@ nix flake check
 # Build all packages.
 nix build
 ```
+
+## FAQ
+
+### Why does this repo exist?
+
+Primarily, this is a testing ground for understanding when the nixpkgs versions of all big deep learning libraries are ready to be used in industry. This repo is not intended to include workarounds, as those should preferably be upstreamed. The goal is to know that `nix run` can work on both x86_64-linux and aarch64-darwin, with reasonable GPU support and everything working as expected by a ML engineer.
