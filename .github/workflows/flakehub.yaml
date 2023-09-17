@@ -10,8 +10,11 @@ on:
         type: "string"
         required: true
 jobs:
-  flakehub-publish:
+  publish:
     runs-on: "ubuntu-latest"
+    environment:
+      name: "flakehub"
+      url: "https://flakehub.com/flake/carlthome/ml-runtimes"
     permissions:
       id-token: "write"
       contents: "read"
