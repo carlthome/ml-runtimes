@@ -9,3 +9,6 @@ on:
 jobs:
   build:
     uses: carlthome/workflows/.github/workflows/nix.yaml@main
+    with:
+      cachix-cache: carlthome
+      cachix-token: ${{ secrets.CACHIX_TOKEN }}
