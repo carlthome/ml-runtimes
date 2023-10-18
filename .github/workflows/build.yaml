@@ -11,4 +11,5 @@ jobs:
     uses: carlthome/workflows/.github/workflows/nix.yaml@main
     with:
       cachix-cache: carlthome
+    secrets:
       cachix-token: ${{ secrets.CACHIX_TOKEN }}
