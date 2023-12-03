@@ -7,7 +7,6 @@
       nix-diff
       nix-info
       nixpkgs-fmt
-      vscodium
     ];
     meta = {
       description = "Development shell for ML runtimes flake";
