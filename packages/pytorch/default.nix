@@ -12,6 +12,7 @@ pkgs.buildEnv {
       transformers
       datasets
       torchmetrics
+      pytorch-lightning
       soundfile
     ]))
   ];
