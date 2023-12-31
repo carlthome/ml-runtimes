@@ -2,7 +2,7 @@
 pkgs.buildEnv {
   name = "ipython";
   paths = [
-    (pkgs.python3.withPackages (ps: with ps; [
+    (pkgs.python310.withPackages (ps: with ps; [
       ipython
       matplotlib
       tensorflow
